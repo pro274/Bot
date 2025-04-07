@@ -1,4 +1,6 @@
-{
+"scripts": {
+  "start": "node index.js"
+}{
   "name": "aternos-pinger",
   "version": "1.0.0",
   "description": "Aternos server pinger",
