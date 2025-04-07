@@ -14,7 +14,7 @@ app.listen(PORT, () => {
 
 const bot = mineflayer.createBot({
   host: 'hf324.aternos.me',
-  port: 25565,
+  port: 29849,
   username: 'Bot',
   version: '1.21.4',
 });
