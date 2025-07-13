@@ -1,0 +1,12 @@
+{
+  "name": "afkbot",
+  "version": "1.0.0",
+  "description": "Simple AFK bot for Aternos using Mineflayer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mineflayer": "^4.16.1"
+  }
+}
