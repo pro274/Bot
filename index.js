@@ -5,7 +5,7 @@ function createBot() {
     host: 'hf324.aternos.me', // Change if needed
     port: 25565,
     username: 'AFKBOT',
-    version: '1.21.5'
+    version: '1.21.4'
   });
 
   bot.on('spawn', () => {
