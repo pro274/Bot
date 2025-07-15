@@ -1,15 +1,20 @@
-{
-  "name": "safe-afk-bot",
-  "version": "1.0.0",
-  "description": "Aternos 24/7 safe bot",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "mineflayer": "3.17.0"
-  },
-  "engines": {
-    "node": "16.x"
-  }
+"name": "nodejs",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+"test": "echo \"Error: no test
+specified\" && exit 1"
+
+},
+
+"keywords": [],
+"author": "",
+"license": "ISC",
+"dependencies": {
+"@types/node": "^22.13.11",
+"express": "^5.1.0",
+"mineflayer": "^4.30.0"
+}
+
 }
