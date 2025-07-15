@@ -1,39 +1,42 @@
 const mineflayer = require('mineflayer');
-const express = require('express');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Mineflayer bot start
-function startBot() {
+function createBot() {
   const bot = mineflayer.createBot({
-    host: 'hf324.aternos.me',
-    port: 31563,
-    username: 'AFKBOT',
-    version: '1.21.4'
+    host: 'hf324.aternos.me', // ✅ Replace with your Aternos IP
+    username: 'Steve_' + Math.floor(Math.random() * 1000), // ✅ Random legit username
+    version: '1.21.4' // ✅ Your Minecraft server version
   });
 
   bot.once('spawn', () => {
-    console.log('Bot spawned!');
+    console.log('✅ Bot spawned and connected!');
+
+    // Anti-AFK movement: walk + jump + random look
+    setInterval(() => {
+      // Randomly rotate head
+      const yaw = Math.random() * Math.PI * 2;
+      bot.look(yaw, 0, true);
+
+      // Walk and jump
+      bot.setControlState('forward', true);
+      bot.setControlState('jump', true);
+
+      // Stop after 1 second
+      setTimeout(() => {
+        bot.setControlState('forward', false);
+        bot.setControlState('jump', false);
+      }, 1000);
+    }, 10000); // every 10 sec
   });
 
+  // Reconnect if disconnected
   bot.on('end', () => {
-    console.log('Bot disconnected, reconnecting...');
-    setTimeout(startBot, 5000);
+    console.log('❌ Disconnected! Reconnecting in 5 seconds...');
+    setTimeout(createBot, 5000);
   });
 
   bot.on('error', (err) => {
-    console.log('Bot error:', err);
+    console.log('⚠️ Error:', err.message);
   });
 }
 
-startBot();
-
-// Express app for keeping port open (IMPORTANT FOR RENDER)
-app.get('/', (req, res) => {
-  res.send('Minecraft bot is running.');
-});
-
-app.listen(PORT, () => {
-  console.log(`Web server running on port ${PORT}`);
-});
+createBot();
