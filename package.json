@@ -1,12 +1,15 @@
 {
   "name": "safe-afk-bot",
   "version": "1.0.0",
-  "description": "Safe 24/7 Aternos AFK bot",
+  "description": "Aternos 24/7 safe bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "mineflayer": "^4.5.0"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
