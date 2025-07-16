@@ -3,7 +3,7 @@ const mineflayer = require('mineflayer');
 function createBot() {
   const bot = mineflayer.createBot({
     host: 'hf324.aternos.me',
-    username: 'BlockBender' + Math.floor(Math.random() * 1000),
+    username: 'BlockBender'
     version: '1.21.4'
   });
 
